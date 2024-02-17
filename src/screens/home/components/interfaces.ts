@@ -1,11 +1,13 @@
 export interface UserHoldingDataProps {
   data: {
-    userHolding: {
-      symbol: string;
-      quantity: number;
-      ltp: number;
-      avgPrice: number;
-      close: number;
-    }[];
+    userHolding: UserHoldingProps[];
   };
+}
+
+export interface UserHoldingProps {
+  symbol: string;
+  quantity: number;
+  ltp: number;
+  avgPrice: number;
+  close: number;
 }

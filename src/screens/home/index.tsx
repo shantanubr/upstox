@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {View, Text, StyleSheet, BackHandler, SafeAreaView} from 'react-native';
 import StockHoldings from './components/stock-holdings';
 import PortfolioSummary from './components/portfolio-summary';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const HomeScreen: React.FC<{navigation: any}> = ({navigation}) => {
   BackHandler.addEventListener('hardwareBackPress', () => {
@@ -46,6 +47,55 @@ const HomeScreen: React.FC<{navigation: any}> = ({navigation}) => {
         avgPrice: 2780.3,
         close: 2610,
       },
+      {
+        symbol: 'Reliance',
+        quantity: 10,
+        ltp: 2887.1,
+        avgPrice: 2780.3,
+        close: 2610,
+      },
+      {
+        symbol: 'Reliance',
+        quantity: 10,
+        ltp: 2887.1,
+        avgPrice: 2780.3,
+        close: 2610,
+      },
+      {
+        symbol: 'Reliance',
+        quantity: 10,
+        ltp: 2887.1,
+        avgPrice: 2780.3,
+        close: 2610,
+      },
+      {
+        symbol: 'Reliance',
+        quantity: 10,
+        ltp: 2887.1,
+        avgPrice: 2780.3,
+        close: 2610,
+      },
+      {
+        symbol: 'Reliance',
+        quantity: 10,
+        ltp: 2887.1,
+        avgPrice: 2780.3,
+        close: 2610,
+      },
+      {
+        symbol: 'Reliance',
+        quantity: 10,
+        ltp: 2887.1,
+        avgPrice: 2780.3,
+        close: 2610,
+      },
+      {
+        symbol: 'Reliance',
+        quantity: 10,
+        ltp: 2887.1,
+        avgPrice: 2780.3,
+        close: 2610,
+      },
     ],
   };
 
@@ -56,7 +106,9 @@ const HomeScreen: React.FC<{navigation: any}> = ({navigation}) => {
       </View>
       <View style={styles.divider} />
       <StockHoldings data={data} />
-      <PortfolioSummary data={data} />
+      <View style={styles.portfolioSummary}>
+        <PortfolioSummary data={data} />
+      </View>
     </SafeAreaView>
   );
 };
@@ -64,6 +116,7 @@ const HomeScreen: React.FC<{navigation: any}> = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'darkgrey',
   },
   title: {
     fontSize: 18,
@@ -72,10 +125,15 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     padding: 12,
+    backgroundColor: Colors.lighter,
   },
   divider: {
     height: 1,
     backgroundColor: 'lightgrey',
+  },
+  portfolioSummary: {
+    position: 'absolute',
+    bottom: 0,
   },
 });
 
