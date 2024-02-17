@@ -10,8 +10,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {HOME} from '../../constants/routes';
-
-export const upstoxPrimaryColor = '#5B298C';
+import {upstoxPrimaryColor} from '../../constants/colors';
 
 const SplashScreen: React.FC<{navigation: any}> = ({navigation}) => {
   useEffect(() => {
