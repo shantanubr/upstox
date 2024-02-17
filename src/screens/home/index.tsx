@@ -12,7 +12,6 @@ import PortfolioSummary from './components/portfolio-summary';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {upstoxPrimaryColor} from '../../constants/colors';
 import useGetHoldingsData from '../../hooks/useGetHoldingsData';
-import {UserHoldingDataProps, UserHoldingProps} from './components/interfaces';
 
 const HomeScreen: React.FC<{navigation: any}> = ({navigation}) => {
   BackHandler.addEventListener('hardwareBackPress', () => {
