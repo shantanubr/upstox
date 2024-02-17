@@ -17,7 +17,7 @@ import {
 import {upstoxPrimaryColor} from '../../../../constants/colors';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-const PortfolioSummary: React.FC<UserHoldingDataProps> = ({data}) => {
+const PortfolioSummary: React.FC<UserHoldingDataProps> = props => {
   const [isSummaryVisible, setIsSummaryVisible] = useState(false);
   return (
     <TouchableHighlight
@@ -32,19 +32,19 @@ const PortfolioSummary: React.FC<UserHoldingDataProps> = ({data}) => {
             <View style={styles.summaryContainer}>
               <Text style={styles.summaryLabel}>{`Current Value:`}</Text>
               <Text style={styles.summaryValue}>
-                {getRupeeValue(getTotalCurrentValue(data.userHolding))}
+                {getRupeeValue(getTotalCurrentValue(props.data.userHolding))}
               </Text>
             </View>
             <View style={styles.summaryContainer}>
               <Text style={styles.summaryLabel}>{`Total Investment:`}</Text>
               <Text style={styles.summaryValue}>
-                {getRupeeValue(getTotalInvestment(data.userHolding))}
+                {getRupeeValue(getTotalInvestment(props.data.userHolding))}
               </Text>
             </View>
             <View style={styles.summaryContainer}>
               <Text style={styles.summaryLabel}>{`Today's Profit & Loss`}</Text>
               <Text style={styles.summaryValue}>
-                {getTodaysProfitAndLoss(data.userHolding)}
+                {getTodaysProfitAndLoss(props.data.userHolding)}
               </Text>
             </View>
           </View>
@@ -55,7 +55,7 @@ const PortfolioSummary: React.FC<UserHoldingDataProps> = ({data}) => {
         <View style={styles.portfolioContainer}>
           <Text style={styles.summaryLabel}>{`Profit & Loss:`}</Text>
           <Text style={styles.summaryValue}>
-            {getTotalProfitAndLoss(data.userHolding)}
+            {getTotalProfitAndLoss(props.data.userHolding)}
           </Text>
         </View>
       </>

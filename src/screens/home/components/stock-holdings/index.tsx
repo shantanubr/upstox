@@ -3,14 +3,14 @@ import {View, Text, FlatList, StyleSheet} from 'react-native';
 import {UserHoldingDataProps} from '../interfaces';
 import {getRupeeValue} from '../../../../misc/util';
 
-const StockHoldings: React.FC<UserHoldingDataProps> = ({data}) => {
+const StockHoldings: React.FC<UserHoldingDataProps> = props => {
   const profitAndLoss = (ltp: number, avgPrice: number, quantity: number) => {
     const result = ltp * quantity - avgPrice * quantity;
     return getRupeeValue(result);
   };
   return (
     <FlatList
-      data={data.userHolding}
+      data={props.data.userHolding}
       renderItem={({item, index}) => (
         <View style={styles.holdingItemContainer} key={index}>
           <View style={styles.holdingItem}>
